@@ -28,7 +28,7 @@ INC = libft.h
 
 NAME = libft.a
 
-FLAGS = -Wextra -Werror -Wall -c
+FLAGS = -Wextra -Werror -Wall
 
 .PHONY : clean fclean all re
 
