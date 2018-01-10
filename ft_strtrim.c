@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	isspace(char c)
+int	cheack_space(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n')
 		return (1);
@@ -33,11 +33,11 @@ char		*ft_strtrim(char const *s)
 		return (0);
 	i = 0;
 	mys = (char *)s;
-	while (isspace(*mys))
+	while (cheack_space(*mys))
 		mys++;
 	while ((ptr[i] = mys[i]) && mys[i + 1])
 		i++;
-	while (isspace(ptr[i]))
+	while (cheack_space(ptr[i]))
 		i--;
 	ptr[i + 1] = 0;
 	return (ptr);

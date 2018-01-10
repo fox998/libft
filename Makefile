@@ -20,11 +20,11 @@ ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c \
 ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c \
 ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c \
 ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
-ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c get_next_line.c
+ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c get_next_line.c 
 
 OBG = $(SRC:.c=.o)
 
-INC = libft.h
+INC = ./
 
 NAME = libft.a
 
@@ -34,11 +34,11 @@ FLAGS = -Wextra -Werror -Wall
 
 all: $(NAME)
 
-$(NAME): $(OBG) $(INC)
+$(NAME): $(OBG)
 	@ar rc $(NAME) $(OBG)
 
 %.o : %.c
-	gcc -o $@ -c $< $(FLAGS) -I$(INC)
+	@gcc -o $@ -c $< $(FLAGS) -I$(INC)
 
 clean:
 	@rm -f $(OBG)
@@ -47,3 +47,5 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+
