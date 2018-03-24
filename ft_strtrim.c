@@ -12,13 +12,6 @@
 
 #include "libft.h"
 
-int	cheack_space(char c)
-{
-	if (c == ' ' || c == '\t' || c == '\n')
-		return (1);
-	return (0);
-}
-
 char		*ft_strtrim(char const *s)
 {
 	int		slen;
@@ -33,11 +26,11 @@ char		*ft_strtrim(char const *s)
 		return (0);
 	i = 0;
 	mys = (char *)s;
-	while (cheack_space(*mys))
+	while (*mys == ' ' || *mys == '\t' || *mys == '\n')
 		mys++;
 	while ((ptr[i] = mys[i]) && mys[i + 1])
 		i++;
-	while (cheack_space(ptr[i]))
+	while (ptr[i] == ' ' || ptr[i] == '\t' || ptr[i] == '\n')
 		i--;
 	ptr[i + 1] = 0;
 	return (ptr);
